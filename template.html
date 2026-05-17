@@ -1,0 +1,104 @@
+<!--
+-------------------------------------------------------------------------------
+  IronPulse Fitness Final Project
+  Author: Mahmudul Hasan
+  Date: May 16, 2026
+  CST 2309 | Gym Website
+  Template HTML file used by all three pages. 
+  This file includes:
+    The header, footer, and JavaScript links. 
+    The main content is added to the <main> element on each individual page.
+  ------------------------------------------------------------------------------ 
+-->
+  
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- The viewport meta tag is important for responsive design. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IronPulse Fitness | About Us</title>
+  <!-- Link to the external CSS file for styling. -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Link to the favicon for the website. -->
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+  <!-- Countdown promotion clock. This appears above the menu on every page. -->
+  <div class="top-countdown" aria-live="polite">
+    <strong>Get 50% Off Your First Month</strong>
+    <span id="countdownText"> Spring Fitness Deal</span>
+  </div>
+
+  <!-- Main header and navigation. The same header is used on all three pages. -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="IronPulse Fitness home">
+         <img class="brand-mark" src="favicon.png" alt="IronPulse Fitness Logo">
+        <span>IronPulse Fitness</span>
+      </a>
+
+      <!-- Mobile hamburger button. JavaScript opens and closes the menu. -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a class="active" href="index.html">About Us</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="classes.html">Classes &amp; Schedule</a></li>
+      </ul>
+
+      <button class="theme-btn" id="themeToggle" type="button">Switch Theme</button>
+    </nav>
+  </header>
+
+
+  <main> 
+    <!-- Main content goes here -->
+  </main>
+ 
+ <!--Footer Section-->
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h3>Contact Info</h3>
+        <p>Phone: (347) 111-1111</p>
+        <p>Email: info@ironpulsefitness.com</p>
+        <p>Mon - Fri: 5AM - 10PM<br>Sat - Sun: 7AM - 8PM</p>
+      </div>
+      <div>
+        <h3>Address</h3>
+        <p>123 Default Street<br>Strength City, NY 11208<br>USA</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">About Us</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="classes.html">Classes &amp; Schedule</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Social Media</h3>
+        <div class="social-links">
+          <a href="https://facebook.com" aria-label="Facebook">f</a>
+          <a href="https://instagram.com" aria-label="Instagram">ig</a>
+          <a href="https://youtube.com" aria-label="YouTube">yt</a>
+          <a href="https://linkedin.com" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 IronPulse Fitness. All Rights Reserved.</p>
+  </footer>
+
+<!-- JavaScript file -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!--
+---------------------------------------------------------------------------------------
+  IronPulse Fitness Final Project
+  Author: Mahmudul Hasan
+  Date: May 16, 2026
+  CST 2309 | Gym Website
+  About Us page for a fictional gym called IronPulse Fitness. 
+  This page uses the template.html file for the header, footer, and JavaScript links. 
+  The main content is added to the <main> element below.
+  -------------------------------------------------------------------------------------
+-->
+  
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- The viewport meta tag is important for responsive design. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IronPulse Fitness | About Us</title>
+  <!-- Link to the external CSS file for styling. -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Link to the favicon for the website. -->
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+  <!-- Countdown promotion clock. This appears above the menu on every page. -->
+  <div class="top-countdown" aria-live="polite">
+    <strong>Get 50% Off Your First Month</strong>
+    <span id="countdownText"> Spring Fitness Deal</span>
+  </div>
+
+  <!-- Main header and navigation. The same header is used on all three pages. -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="IronPulse Fitness home">
+         <img class="brand-mark" src="favicon.png" alt="IronPulse Fitness Logo">
+        <span>IronPulse Fitness</span>
+      </a>
+
+      <!-- Mobile hamburger button. JavaScript opens and closes the menu. -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a class="active" href="index.html">About Us</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="classes.html">Classes &amp; Schedule</a></li>
+      </ul>
+
+      <button class="theme-btn" id="themeToggle" type="button">Switch Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero section: big image and short welcome message. -->
+    <section class="hero two-column-section">
+      <div class="hero-image">
+        <video class="hero-video" autoplay loop playsinline controls id="heroVideo">
+          <source src="videos/hero-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      </div>
+      <div class="hero-text">
+        <p class="eyebrow">Welcome to IronPulse Fitness</p>
+        <h1>Train Hard. Stay Strong. Build Your Best Self.</h1>
+        <p>
+          IronPulse Fitness is a friendly and modern gym created for people who want to become stronger,
+          healthier, and more confident. Our space is made for beginners, students, athletes, and anyone
+          who wants a supportive fitness community.
+        </p>
+        <a class="primary-btn" href="membership.html">Join Today</a>
+      </div>
+    </section>
+
+    <!-- About section: explains the gym in simple student-friendly language. -->
+    <section class="content-card about-box">
+      <h2>About the Gym</h2>
+      <p>
+        Our mission is to make fitness feel clear, motivating, and possible for everyone. We believe a gym
+        should be more than a room full of machines. It should be a place where members feel encouraged,
+        respected, and ready to improve one day at a time. IronPulse Fitness offers strength training,
+        cardio, group classes, personal coaching, and flexible membership plans.
+      </p>
+    </section>
+
+    <!-- Mission and values. Icons are simple text symbols so the page stays light and easy to load. -->
+    <section class="section-block">
+      <h2>Mission and Values</h2>
+      <div class="value-grid">
+        <article class="small-card">
+          <span class="circle-icon">★</span>
+          <h3>Mission</h3>
+          <p>Help every member build a healthier lifestyle through safe and simple fitness routines.</p>
+        </article>
+        <article class="small-card">
+          <span class="circle-icon">✓</span>
+          <h3>Values</h3>
+          <p>We value discipline, respect, consistency, and steady progress over quick shortcuts.</p>
+        </article>
+        <article class="small-card">
+          <span class="circle-icon">◆</span>
+          <h3>Community</h3>
+          <p>Our gym welcomes people at every fitness level and encourages positive support.</p>
+        </article>
+        <article class="small-card">
+          <span class="circle-icon">♥</span>
+          <h3>Healthy Lifestyle</h3>
+          <p>We focus on movement, strength, confidence, and long-term wellness.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Program cards. These use the required images, headings, and short paragraphs. -->
+    <section class="section-block">
+      <h2>Our Programs</h2>
+      <div class="program-grid">
+        <article class="image-card">
+          <img src="images/program-strength.jpg" alt="Member doing strength training with a barbell">
+          <h3>Strength Training</h3>
+          <p>Build muscle, improve form, and gain confidence with free weights and machines.</p>
+        </article>
+        <article class="image-card">
+          <img src="images/program-cardio.jpg" alt="Woman running on a treadmill in a cardio area">
+          <h3>Cardio Fitness</h3>
+          <p>Improve endurance with treadmills, bikes, rowing machines, and guided routines.</p>
+        </article>
+        <article class="image-card">
+          <img src="images/program-functional.jpg" alt="Group doing functional training exercises">
+          <h3>Functional Training</h3>
+          <p>Train real-life movement with balance, speed, core strength, and body control.</p>
+        </article>
+        <article class="image-card">
+          <img src="images/program-yoga.jpg" alt="Group yoga class in a bright studio room">
+          <h3>Yoga and Recovery</h3>
+          <p>Stretch, breathe, recover, and improve flexibility with calming group sessions.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Trainer section. Three trainer cards match the wireframe. -->
+    <section class="section-block">
+      <h2>Meet Our Trainers</h2>
+      <div class="trainer-grid">
+        <article class="trainer-card">
+          <img src="images/trainer-1.jpg" alt="Trainer Alex Carter smiling in the gym">
+          <h3>Alex Carter</h3>
+          <p>Strength Coach</p>
+        </article>
+        <article class="trainer-card">
+          <img src="images/trainer-2.jpg" alt="Trainer Mia Johnson smiling in the gym">
+          <h3>Mia Johnson</h3>
+          <p>Yoga and Wellness Coach</p>
+        </article>
+        <article class="trainer-card">
+          <img src="images/trainer-3.jpg" alt="Trainer Ryan Smith smiling in the gym">
+          <h3>Ryan Smith</h3>
+          <p>HIIT and Conditioning Coach</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Call to action before footer. -->
+    <section class="cta-row">
+      <div>
+        <h2>Join Today</h2>
+        <p>Start your fitness journey with IronPulse Fitness.</p>
+      </div>
+      <a class="primary-btn" href="membership.html">Join Now</a>
+    </section>
+  </main>
+
+ <!--Footer Section-->
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h3>Contact Info</h3>
+        <p>Phone: (347) 111-1111</p>
+        <p>Email: info@ironpulsefitness.com</p>
+        <p>Mon - Fri: 5AM - 10PM<br>Sat - Sun: 7AM - 8PM</p>
+      </div>
+      <div>
+        <h3>Address</h3>
+        <p>123 Default Street<br>Strength City, NY 11208<br>USA</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">About Us</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="classes.html">Classes &amp; Schedule</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Social Media</h3>
+        <div class="social-links">
+          <a href="https://facebook.com" aria-label="Facebook">f</a>
+          <a href="https://instagram.com" aria-label="Instagram">ig</a>
+          <a href="https://youtube.com" aria-label="YouTube">yt</a>
+          <a href="https://linkedin.com" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 IronPulse Fitness. All Rights Reserved.</p>
+  </footer>
+
+<!-- JavaScript file -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!--
+-------------------------------------------------------------------------------------
+  IronPulse Fitness Final Project
+  Author: Mahmudul Hasan
+  Date: May 16, 2026
+  CST 2309 | Gym Website
+  Classes & Schedule page for a fictional gym called IronPulse Fitness. 
+  This page uses the template.html file for the header, footer, and JavaScript links. 
+  The main content is added to the <main> element below.
+  -------------------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- The viewport meta tag is important for responsive design. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IronPulse Fitness | About Us</title>
+  <!-- Link to the external CSS file for styling. -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Link to the favicon for the website. -->
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+  <!-- Countdown promotion clock. This appears above the menu on every page. -->
+  <div class="top-countdown" aria-live="polite">
+    <strong>Get 50% Off Your First Month</strong>
+    <span id="countdownText"> Spring Fitness Deal</span>
+  </div>
+
+  <!-- Main header and navigation. The same header is used on all three pages. -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="IronPulse Fitness home">
+         <img class="brand-mark" src="favicon.png" alt="IronPulse Fitness Logo">
+        <span>IronPulse Fitness</span>
+      </a>
+
+      <!-- Mobile hamburger button. JavaScript opens and closes the menu. -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a class="active" href="index.html">About Us</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="classes.html">Classes &amp; Schedule</a></li>
+      </ul>
+
+      <button class="theme-btn" id="themeToggle" type="button">Switch Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Creativity page hero section. -->
+    <section class="two-column-section page-intro">
+      <div class="hero-image">
+        <img src="images/class-hiit.jpg" alt="Members doing a HIIT workout class">
+      </div>
+      <div>
+        <p class="eyebrow">Creativity Page</p>
+        <h1>Explore Our Classes</h1>
+        <p>
+          Our group classes are designed to keep workouts exciting, organized, and motivating. Choose from
+          HIIT, yoga, boxing, cycling, strength bootcamp, and dance fitness. This page also includes
+          JavaScript-powered interactive features.
+        </p>
+        <a class="primary-btn" href="#scheduleTable">View Full Schedule</a>
+      </div>
+    </section>
+
+    <!-- Popular classes. Six cards match the plan and wireframe. -->
+    <section class="section-block">
+      <h2>Popular Classes</h2>
+      <div class="class-grid">
+        <article class="class-card">
+          <img src="images/class-hiit.jpg" alt="HIIT training class">
+          <div>
+            <h3>HIIT</h3>
+            <p>Fast-paced training using bodyweight moves, short rests, and high energy.</p>
+          </div>
+        </article>
+        <article class="class-card">
+          <img src="images/class-yoga.jpg" alt="Yoga class">
+          <div>
+            <h3>Yoga</h3>
+            <p>Improve flexibility, breathing, balance, and calm body control.</p>
+          </div>
+        </article>
+        <article class="class-card">
+          <img src="images/class-strength.jpg" alt="Strength bootcamp class">
+          <div>
+            <h3>Strength Bootcamp</h3>
+            <p>Build full-body strength with weights, ropes, and guided training stations.</p>
+          </div>
+        </article>
+        <article class="class-card">
+          <img src="images/class-boxing.jpg" alt="Boxing fitness class">
+          <div>
+            <h3>Boxing Fitness</h3>
+            <p>Practice punches, footwork, conditioning, and stress relief.</p>
+          </div>
+        </article>
+        <article class="class-card">
+          <img src="images/class-cycling.jpg" alt="Indoor cycling class">
+          <div>
+            <h3>Cycling</h3>
+            <p>Ride with music, coaching, speed intervals, and endurance goals.</p>
+          </div>
+        </article>
+        <article class="class-card">
+          <img src="images/class-zumba.jpg" alt="Zumba dance fitness class">
+          <div>
+            <h3>Zumba</h3>
+            <p>Dance-based cardio class that makes fitness fun and social.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Weekly schedule table. -->
+    <section class="section-block" id="scheduleTable">
+      <h2>Weekly Class Schedule</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Class</th>
+              <th>Time</th>
+              <th>Trainer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Monday</td><td>HIIT Training</td><td>6:00 PM</td><td>Ryan Smith</td></tr>
+            <tr><td>Tuesday</td><td>Yoga and Stretching</td><td>7:00 PM</td><td>Mia Johnson</td></tr>
+            <tr><td>Wednesday</td><td>Boxing Fitness</td><td>6:30 PM</td><td>Alex Carter</td></tr>
+            <tr><td>Thursday</td><td>Strength Bootcamp</td><td>7:00 PM</td><td>Ryan Smith</td></tr>
+            <tr><td>Friday</td><td>Cycling Class</td><td>5:30 PM</td><td>Mia Johnson</td></tr>
+            <tr><td>Saturday</td><td>Zumba Dance Fitness</td><td>10:00 AM</td><td>Guest Coach</td></tr>
+            <tr><td>Sunday</td><td>Recovery Yoga</td><td>9:00 AM</td><td>Mia Johnson</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Two JavaScript features are placed side by side on large screens. -->
+    <section class="interactive-grid">
+      <!-- Feature 1: Workout of the Day generator. Uses arrays and randomization in script.js. -->
+      <div class="interactive-card">
+        <h2>Workout of the Day Generator</h2>
+        <p>Get a random workout idea to keep you motivated.</p>
+        <div id="workoutResult" class="result-box">Your workout will appear here.</div>
+        <button class="primary-btn" id="workoutButton" type="button">Generate Workout</button>
+      </div>
+
+      <!-- Feature 2: JavaScript image slideshow. -->
+      <div class="interactive-card slideshow-card">
+        <h2>Class Image Slideshow</h2>
+        <div class="slideshow">
+          <button class="slide-btn" id="prevSlide" type="button" aria-label="Previous slide">&lt;</button>
+          <img id="slideImage" src="images/slideshow-1.jpg" alt="IronPulse class slideshow image">
+          <button class="slide-btn" id="nextSlide" type="button" aria-label="Next slide">&gt;</button>
+        </div>
+        <p id="slideCaption" class="slide-caption">Strength Training Focus</p>
+        <div class="slide-dots" id="slideDots" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="cta-row">
+      <div>
+        <h2>Ready to move?</h2>
+        <p>Join a class today and take the next step toward a stronger, healthier you.</p>
+      </div>
+      <a class="primary-btn" href="membership.html">Join a Class</a>
+    </section>
+  </main>
+
+<!--Footer Section-->
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h3>Contact Info</h3>
+        <p>Phone: (347) 111-1111</p>
+        <p>Email: info@ironpulsefitness.com</p>
+        <p>Mon - Fri: 5AM - 10PM<br>Sat - Sun: 7AM - 8PM</p>
+      </div>
+      <div>
+        <h3>Address</h3>
+        <p>123 Default Street<br>Strength City, NY 11208<br>USA</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">About Us</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="classes.html">Classes &amp; Schedule</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Social Media</h3>
+        <div class="social-links">
+          <a href="https://facebook.com" aria-label="Facebook">f</a>
+          <a href="https://instagram.com" aria-label="Instagram">ig</a>
+          <a href="https://youtube.com" aria-label="YouTube">yt</a>
+          <a href="https://linkedin.com" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 IronPulse Fitness. All Rights Reserved.</p>
+  </footer>
+
+<!-- JavaScript file -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

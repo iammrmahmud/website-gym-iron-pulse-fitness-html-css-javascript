@@ -1,0 +1,251 @@
+<!--
+---------------------------------------------------------------------------------------
+  IronPulse Fitness Final Project
+  Author: Mahmudul Hasan
+  Date: May 16, 2026
+  CST 2309 | Gym Website
+  Membership page for a fictional gym called IronPulse Fitness. 
+  This page uses the template.html file for the header, footer, and JavaScript links. 
+  The main content is added to the <main> element below.
+  ------------------------------------------------------------------------------------- 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- The viewport meta tag is important for responsive design. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IronPulse Fitness | About Us</title>
+  <!-- Link to the external CSS file for styling. -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Link to the favicon for the website. -->
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+  <!-- Countdown promotion clock. This appears above the menu on every page. -->
+  <div class="top-countdown" aria-live="polite">
+    <strong>Get 50% Off Your First Month</strong>
+    <span id="countdownText"> Spring Fitness Deal</span>
+  </div>
+
+  <!-- Main header and navigation. The same header is used on all three pages. -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="IronPulse Fitness home">
+         <img class="brand-mark" src="favicon.png" alt="IronPulse Fitness Logo">
+        <span>IronPulse Fitness</span>
+      </a>
+
+      <!-- Mobile hamburger button. JavaScript opens and closes the menu. -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a class="active" href="index.html">About Us</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="classes.html">Classes &amp; Schedule</a></li>
+      </ul>
+
+      <button class="theme-btn" id="themeToggle" type="button">Switch Theme</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Membership hero section. -->
+    <section class="two-column-section page-intro">
+      <div class="hero-image">
+        <img src="images/membership-gym.jpg" alt="IronPulse Fitness front desk and gym interior">
+      </div>
+      <div>
+        <p class="eyebrow">Membership Registration</p>
+        <h1>Become a Member</h1>
+        <p>
+          Join IronPulse Fitness today and take the first step toward a stronger, healthier you. Choose a
+          plan that fits your lifestyle and goals. Our team is ready to support you every step of the way.
+        </p>
+      </div>
+    </section>
+
+    <!-- Benefit cards. -->
+    <section class="section-block">
+      <h2>Membership Benefits</h2>
+      <div class="value-grid">
+        <article class="small-card">
+          <span class="circle-icon">🏋</span>
+          <h3>Access to Equipment</h3>
+          <p>Use strength machines, cardio equipment, free weights, and stretching areas.</p>
+        </article>
+        <article class="small-card">
+          <span class="circle-icon">👥</span>
+          <h3>Group Classes</h3>
+          <p>Join energetic classes that help you stay motivated and consistent.</p>
+        </article>
+        <article class="small-card">
+          <span class="circle-icon">📅</span>
+          <h3>Flexible Plans</h3>
+          <p>Choose a plan that matches your goals, schedule, and budget.</p>
+        </article>
+        <article class="small-card">
+          <span class="circle-icon">⭐</span>
+          <h3>Personal Training</h3>
+          <p>Work with coaches who can guide your workouts and track your progress.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Membership plan cards. -->
+    <section class="section-block">
+      <h2>Membership Plans</h2>
+      <div class="plan-grid">
+        <article class="plan-card">
+          <h3>Basic</h3>
+          <ul>
+            <li>Access to gym equipment</li>
+            <li>Locker room access</li>
+            <li>Standard support</li>
+          </ul>
+          <p class="price">$29 / month</p>
+          <a class="secondary-btn" href="#registrationForm">Choose Plan</a>
+        </article>
+        <article class="plan-card featured-plan">
+          <h3>Standard</h3>
+          <ul>
+            <li>All Basic features</li>
+            <li>Group classes included</li>
+            <li>Priority support</li>
+          </ul>
+          <p class="price">$49 / month</p>
+          <a class="secondary-btn" href="#registrationForm">Choose Plan</a>
+        </article>
+        <article class="plan-card">
+          <h3>Premium</h3>
+          <ul>
+            <li>All Standard features</li>
+            <li>Personal training session</li>
+            <li>Nutrition guidance</li>
+          </ul>
+          <p class="price">$79 / month</p>
+          <a class="secondary-btn" href="#registrationForm">Choose Plan</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Registration form. JavaScript validates this form before submission. -->
+    <section class="form-section" id="registrationForm">
+      <h2>Membership Registration Form</h2>
+      <form id="memberForm" novalidate>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="example@email.com">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="123-456-7890">
+          </div>
+
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" placeholder="18">
+          </div>
+
+          <div class="form-group">
+            <label for="membershipType">Membership Type</label>
+            <select id="membershipType" name="membershipType">
+              <option value="">Select Membership Type</option>
+              <option value="Basic">Basic</option>
+              <option value="Standard">Standard</option>
+              <option value="Premium">Premium</option>
+              <option value="Student Plan">Student Plan</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="workoutTime">Preferred Workout Time</label>
+            <select id="workoutTime" name="workoutTime">
+              <option value="">Select Preferred Time</option>
+              <option value="Morning">Morning</option>
+              <option value="Afternoon">Afternoon</option>
+              <option value="Evening">Evening</option>
+              <option value="Night">Night</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="fitnessGoals">Fitness Goals</label>
+            <textarea id="fitnessGoals" name="fitnessGoals" rows="5" placeholder="Tell us about your fitness goals"></textarea>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="emergencyPhone">Emergency Contact Number</label>
+            <input type="tel" id="emergencyPhone" name="emergencyPhone" placeholder="123-456-7890">
+          </div>
+        </div>
+
+        <!-- JavaScript writes validation errors or success messages here. -->
+        <div id="formMessage" class="form-message" aria-live="polite"></div>
+        <button class="primary-btn submit-btn" type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section class="cta-row contact-strip">
+      <div>
+        <h2>Questions? Contact Us</h2>
+        <p>We are here to help with membership plans, facilities, class times, and registration questions.</p>
+      </div>
+      <a class="primary-btn" href="mailto:info@ironpulsefitness.com">Contact Us</a>
+    </section>
+  </main>
+
+<!--Footer Section-->
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h3>Contact Info</h3>
+        <p>Phone: (347) 111-1111</p>
+        <p>Email: info@ironpulsefitness.com</p>
+        <p>Mon - Fri: 5AM - 10PM<br>Sat - Sun: 7AM - 8PM</p>
+      </div>
+      <div>
+        <h3>Address</h3>
+        <p>123 Default Street<br>Strength City, NY 11208<br>USA</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">About Us</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="classes.html">Classes &amp; Schedule</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Social Media</h3>
+        <div class="social-links">
+          <a href="https://facebook.com" aria-label="Facebook">f</a>
+          <a href="https://instagram.com" aria-label="Instagram">ig</a>
+          <a href="https://youtube.com" aria-label="YouTube">yt</a>
+          <a href="https://linkedin.com" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 IronPulse Fitness. All Rights Reserved.</p>
+  </footer>
+
+<!-- JavaScript file -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

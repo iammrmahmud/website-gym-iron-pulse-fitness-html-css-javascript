@@ -1,0 +1,884 @@
+/*
+  IronPulse Fitness Final Project
+  Author: Mahmudul Hasan
+  Date: May 16, 2026
+  CST 2309 | Gym Website
+  External CSS file used by all three pages.
+  This file includes:
+      1. Basic setup and CSS variables
+      2. Styles for countdown promotion clock and header
+      3. Reusable layout sections like two-column sections, cards, and CTA rows
+      4. Specific styles for about page cards
+      5. Styles for membership page including form styling
+      6. Styles for classes and schedule page including table and slideshow
+      7. Footer styles
+      8. Responsive design with multiple breakpoints
+*/
+
+/* -----------------------------
+   1. Basic setup and variables
+------------------------------ */
+:root {
+  --bg: #101114;
+  --surface: #181a1f;
+  --surface-light: #22252c;
+  --text: #f5f5f5;
+  --muted: #c8c8c8;
+  --accent: #e03131;
+  --accent-dark: #b02525;
+  --border: #333842;
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  --max-width: 1180px;
+}
+
+/* Light theme is turned on by JavaScript when the user clicks Switch Theme. */
+body.light-theme {
+  --bg: #f7f7f7;
+  --surface: #ffffff;
+  --surface-light: #f1f1f1;
+  --text: #1f1f1f;
+  --muted: #555555;
+  --border: #d6d6d6;
+  --shadow: 0 10px 22px rgba(0, 0, 0, 0.10);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  width: min(var(--max-width), 92%);
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.3rem;
+}
+
+h3 {
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: var(--muted);
+}
+
+/* -----------------------------
+   2. Countdown and header
+------------------------------ */
+.top-countdown {
+  background: var(--accent);
+  color: #ffffff;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.98rem;
+  letter-spacing: 0.2px;
+}
+
+
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(16, 17, 20, 0.96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+.light-theme .site-header {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.navbar {
+  width: min(var(--max-width), 92%);
+  margin: 0 auto;
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 800;
+  font-size: 1.15rem;
+  white-space: nowrap;
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  border: 2px solid #000;
+  background: white;
+  display: grid;
+  place-items: center;
+  font-size: 0.9rem;
+  border-radius: 100%;
+  font-weight: 800;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-weight: 700;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+.theme-btn,
+.menu-toggle,
+.primary-btn,
+.secondary-btn,
+.submit-btn,
+.slide-btn {
+  cursor: pointer;
+  font: inherit;
+}
+
+.theme-btn {
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--text);
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.theme-btn:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* The hamburger menu is hidden on desktop and shown on mobile screens. */
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 0.5rem;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  background: var(--text);
+  margin: 5px 0;
+  border-radius: 10px;
+}
+
+/* -----------------------------
+   3. Reusable layout sections
+------------------------------ */
+.two-column-section,
+.section-block,
+.content-card,
+.form-section,
+.interactive-card,
+.cta-row {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  margin: 2rem 0;
+}
+
+.two-column-section {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px;
+}
+
+.hero-text,
+.page-intro > div:last-child {
+  padding: 1rem;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.85rem 1.4rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.primary-btn {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.primary-btn:hover {
+  background: var(--accent-dark);
+}
+
+.secondary-btn {
+  border: 1px solid var(--accent);
+  color: var(--text);
+  background: transparent;
+}
+
+.secondary-btn:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.content-card,
+.section-block,
+.form-section,
+.interactive-card {
+  padding: 2rem;
+}
+
+.about-box p {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.value-grid,
+.program-grid,
+.trainer-grid,
+.plan-grid,
+.class-grid,
+.interactive-grid,
+.footer-grid {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.value-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.small-card,
+.image-card,
+.trainer-card,
+.plan-card,
+.class-card {
+  background: var(--surface-light);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.2rem;
+}
+
+.small-card {
+  text-align: center;
+}
+
+.circle-icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin: 0 auto 0.8rem;
+  background: rgba(224, 49, 49, 0.13);
+  color: var(--accent);
+  font-weight: 900;
+}
+
+/* -----------------------------
+   4. About page cards
+------------------------------ */
+.program-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.image-card img {
+  height: 170px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.trainer-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.trainer-card {
+  text-align: center;
+}
+
+.trainer-card img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  border: 4px solid var(--accent);
+}
+
+.cta-row {
+  padding: 1.6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.cta-row h2 {
+  text-align: left;
+  margin-bottom: 0.4rem;
+}
+
+.cta-row p {
+  margin-bottom: 0;
+}
+
+/* -----------------------------
+   5. Membership page
+------------------------------ */
+.plan-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.plan-card {
+  text-align: center;
+}
+
+.plan-card ul {
+  list-style-position: inside;
+  padding: 0;
+  color: var(--muted);
+}
+
+.plan-card li {
+  margin: 0.45rem 0;
+}
+
+.price {
+  font-size: 1.45rem;
+  color: var(--text);
+  font-weight: 900;
+  margin: 1rem 0;
+}
+
+.featured-plan {
+  border: 2px solid var(--accent);
+  transform: translateY(-6px);
+}
+
+.form-section h2 {
+  margin-bottom: 1rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.4rem;
+  font-weight: 800;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--accent);
+  border-color: var(--accent);
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-message {
+  min-height: 48px;
+  margin: 1.2rem 0;
+  padding: 1rem;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  color: var(--muted);
+}
+
+.form-message.error {
+  border-color: var(--accent);
+  color: #ffbaba;
+  background: rgba(224, 49, 49, 0.10);
+}
+
+.light-theme .form-message.error {
+  color: #8a1717;
+}
+
+.form-message.success {
+  border-color: #2f9e44;
+  color: #b7f7c4;
+  background: rgba(47, 158, 68, 0.12);
+}
+
+.light-theme .form-message.success {
+  color: #236b32;
+}
+
+.submit-btn {
+  min-width: 220px;
+  display: block;
+  margin: 0 auto;
+}
+
+.contact-strip {
+  margin-bottom: 2rem;
+}
+
+/* -----------------------------
+   6. Classes and schedule page
+------------------------------ */
+.class-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.class-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.class-card img {
+  width: 120px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 680px;
+  background: var(--surface-light);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 0.95rem;
+  text-align: left;
+}
+
+th {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.interactive-grid {
+  grid-template-columns: repeat(2, 1fr);
+  margin: 2rem 0;
+}
+
+.result-box {
+  min-height: 120px;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  background: var(--surface-light);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-weight: 800;
+}
+
+.slideshow {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.slideshow img {
+  height: 260px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+.slide-btn {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface-light);
+  color: var(--text);
+  font-weight: 900;
+}
+
+.slide-caption {
+  text-align: center;
+  margin: 0.8rem 0;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.slide-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.slide-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.slide-dots span.active-dot {
+  background: var(--accent);
+}
+
+/* -----------------------------
+   7. Footer
+------------------------------ */
+.site-footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+}
+
+.footer-grid {
+  width: min(var(--max-width), 92%);
+  margin: 0 auto;
+  padding: 2rem 0;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.site-footer h3 {
+  color: var(--text);
+}
+
+.site-footer p,
+.site-footer li,
+.site-footer a {
+  color: var(--muted);
+}
+
+.site-footer ul {
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.site-footer a:hover {
+  color: var(--accent);
+}
+
+.social-links {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+}
+
+.copyright {
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
+/* -----------------------------
+   8. Responsive design
+   Breakpoint 1: laptop
+------------------------------ */
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  .program-grid,
+  .value-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .class-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* -----------------------------
+   Breakpoint 2: tablet
+------------------------------ */
+@media (max-width: 900px) {
+  .navbar {
+    flex-wrap: wrap;
+    min-height: auto;
+    padding: 1rem 0;
+  }
+
+  .two-column-section {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image img {
+    height: 320px;
+  }
+
+  .trainer-grid,
+  .plan-grid,
+  .interactive-grid,
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .featured-plan {
+    transform: none;
+  }
+
+  .cta-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* -----------------------------
+   Breakpoint 3: mobile
+   Hamburger menu becomes active here.
+------------------------------ */
+@media (max-width: 700px) {
+  .top-countdown span {
+    display: block;
+    margin-top: 0.25rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    order: 2;
+  }
+
+  .theme-btn {
+    order: 3;
+    width: 100%;
+  }
+
+  .nav-links {
+    order: 4;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    background: var(--surface-light);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .nav-links.show-menu {
+    display: flex;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.8rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-links li:last-child a {
+    border-bottom: 0;
+  }
+
+  h1 {
+    font-size: 2.1rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .two-column-section,
+  .content-card,
+  .section-block,
+  .form-section,
+  .interactive-card {
+    padding: 1.2rem;
+  }
+
+  .program-grid,
+  .value-grid,
+  .trainer-grid,
+  .plan-grid,
+  .class-grid,
+  .interactive-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .class-card {
+    align-items: flex-start;
+  }
+
+  .class-card img {
+    width: 95px;
+    height: 85px;
+  }
+
+  .slideshow {
+    grid-template-columns: 1fr;
+  }
+
+  .slide-btn {
+    width: 100%;
+    border-radius: 10px;
+  }
+}
+
+/* -----------------------------
+   Breakpoint 4: small phone
+------------------------------ */
+@media (max-width: 430px) {
+  main,
+  .navbar,
+  .footer-grid {
+    width: 94%;
+  }
+
+  .brand {
+    font-size: 1rem;
+  }
+
+  .brand-mark {
+    width: 36px;
+    height: 36px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-image img,
+  .slideshow img {
+    height: 230px;
+  }
+
+  .class-card {
+    flex-direction: column;
+  }
+
+  .class-card img {
+    width: 100%;
+    height: 170px;
+  }
+
+  .primary-btn,
+  .secondary-btn,
+  .submit-btn {
+    width: 100%;
+  }
+}
