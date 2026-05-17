@@ -64,7 +64,6 @@ ironpulse-fitness/
 │
 ├── images/
 │   ├── logo.png
-│   ├── hero-video.mp4
 │   ├── hero-about.jpg
 │   ├── program-strength.jpg
 │   ├── program-cardio.jpg
@@ -85,6 +84,8 @@ ironpulse-fitness/
 │   ├── slideshow-3.jpg
 │   └── slideshow-4.jpg
 │
+├── videos/
+│   ├──hero-video.mp4
 └── README.md
 ```
 
