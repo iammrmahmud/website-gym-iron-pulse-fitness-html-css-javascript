@@ -86,6 +86,7 @@ ironpulse-fitness/
 │
 ├── videos/
 │   ├──hero-video.mp4
+│
 └── README.md
 ```
 
