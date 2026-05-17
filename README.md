@@ -515,6 +515,7 @@ If I had more time, I would improve the website by adding more advanced features
 - More animation effects
 - User login page
 - Backend database connection
+- Payment Gateways
 
 These features would make the website more realistic and closer to a professional gym business website.
 
@@ -529,44 +530,7 @@ These features would make the website more realistic and closer to a professiona
 
 ---
 
-## 📎 Final Submission Notes
 
-Before submitting, make sure to include:
-
-- GitHub Pages URL
-- GitHub Repository URL
-- Final project files
-- Summary report
-- PowerPoint slides
-- Class presentation
-
-Also make sure all links, images, video, CSS, and JavaScript work correctly on the live GitHub Pages website.
-
----
-
-## ✅ Final Checklist
-
-- [x] About Us page completed
-- [x] Membership Registration page completed
-- [x] Classes and Schedule page completed
-- [x] Countdown promotion clock added
-- [x] Navigation bar added to all pages
-- [x] Active page links added
-- [x] External CSS file created
-- [x] External JavaScript file created
-- [x] Membership form validation added
-- [x] Workout generator added
-- [x] Image slideshow added
-- [x] Light and dark theme switch added
-- [x] Mobile hamburger menu added
-- [x] Hero video added
-- [x] Sound button added
-- [x] Responsive layout added
-- [x] Images organized inside image folder
-- [x] Code comments added
-- [x] Ready for GitHub Pages
-
----
 
 # IronPulse Fitness
 
