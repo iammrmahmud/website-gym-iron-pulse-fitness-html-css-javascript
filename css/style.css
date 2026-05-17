@@ -247,6 +247,14 @@ p {
   padding: 2rem;
 }
 
+.hero-image img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
 .hero-video {
   width: 100%;
   height: 100%;
