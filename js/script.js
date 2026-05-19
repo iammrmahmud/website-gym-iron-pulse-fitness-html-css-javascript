@@ -36,22 +36,37 @@ if (menuButton && navLinks) {
 
 /* -----------------------------
    2. Light and dark theme switch
+   This keeps the selected theme same on all pages.
 ------------------------------ */
-const themeButton = document.getElementById("themeToggle");
 
-if (themeButton) {
-  themeButton.addEventListener("click", function () {
+const themeToggle = document.getElementById("themeToggle");
+
+const savedTheme = localStorage.getItem("selectedTheme");
+
+if (savedTheme === "light") {
+  document.body.classList.add("light-theme");
+}
+
+
+if (themeToggle) {
+  if (document.body.classList.contains("light-theme")) {
+    themeToggle.textContent = "Dark Theme";
+  } else {
+    themeToggle.textContent = "Light Theme";
+  }
+
+  themeToggle.addEventListener("click", function () {
     document.body.classList.toggle("light-theme");
 
-    // Selection statement used to change the button text.
     if (document.body.classList.contains("light-theme")) {
-      themeButton.textContent = "Dark Theme";
+      localStorage.setItem("selectedTheme", "light");
+      themeToggle.textContent = "Dark Theme";
     } else {
-      themeButton.textContent = "Switch Theme";
+      localStorage.setItem("selectedTheme", "dark");
+      themeToggle.textContent = "Light Theme";
     }
   });
 }
-
 /* -----------------------------
    3. Countdown promotion clock
 ------------------------------ */
